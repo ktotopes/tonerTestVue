@@ -1,0 +1,36 @@
+
+---
+
+## Laravel Backend
+
+## Проект делался при наличии laravel Herd
+
+### 1. Клонирование и установка
+```bash
+git clone https://github.com/ktotopes/tonerTestVue
+```
+```bash
+cd tonerTestVue
+```
+```bash
+npm install
+```
+```bash
+cp .env.example .env
+```
+### 2. Настройка .env
+
+```bash
+VITE_API_URL=http://testtoner.test
+
+php artisan migrate
+```
+
+### 3. Миграции и Passport
+
+```bash
+php artisan passport:install
+php artisan passport:client --public
+php artisan migrate
+```
+npm run dev - запуск веб-сервера || php artisan serve

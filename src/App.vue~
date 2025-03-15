@@ -1,0 +1,17 @@
+<template>
+  <div>
+    <router-view/>
+  </div>
+</template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+import AuthService from './auth/service';
+
+const router = useRouter()
+
+const handleLogout = () => {
+  AuthService.logout()
+  router.push('/login')
+}
+</script>

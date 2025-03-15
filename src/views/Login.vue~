@@ -1,0 +1,36 @@
+<script setup>
+import AuthService from '../auth/service';
+import { ref } from 'vue';
+
+const form = ref({
+  email: '',
+  password: '',
+});
+const login = async () => {
+  try {
+    await AuthService.initiatePKCE();
+  } catch (error) {
+    alert('Login failed: ' + JSON.stringify(error));
+  }
+};
+</script>
+
+<template>
+  <div class="auth-form">
+    <h2>Login</h2>
+
+    <form @submit.prevent="login">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="form.email" required />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" v-model="form.password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+    <router-link to="/register">Don't have an account? Register</router-link>
+  </div>
+</template>
