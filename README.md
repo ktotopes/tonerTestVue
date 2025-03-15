@@ -1,9 +1,7 @@
 
 ---
 
-## Laravel Backend
-
-## Проект делался при наличии laravel Herd
+## Vue front
 
 ### 1. Клонирование и установка
 ```bash
